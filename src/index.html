@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind="pageTitle"></title>
+    <link href="//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Titillium+Web:700|Source+Serif+Pro:400,700|Merriweather+Sans:400,700|Source+Sans+Pro:400,300,600,700,300italic,400italic,600italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//demo.productionready.io/main.css">
+
+    <style>
+      .main {
+        border: 1px solid red;
+        border-radius: 10;
+        padding: 20px;
+        margin: 20px 20px;
+        width: 400px;
+        height: 400px;
+      }
+      input{
+        background-color: lightgray;
+      }
+      button{
+        background-color: maroon;
+        color:white;
+      }
+      label{
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="main.js"></script>
+
+    <div ng-app="myFirstModule" class="main">
+      <div ng-controller="firstModule_Controller_One">
+        
+
+         <div>
+            <label> Event </label>
+            <input ng-model="input_box_1" />
+            <label style="color: red;" ng-show="isErrorActive">{{errorMessage}}</label><br>
+
+             <label> Start Time </label>
+            <input ng-model="input_box_2" />
+            <label style="color: red;" ng-show="isErrorActive">{{errorMessage}}</label><br>
+
+            <label> End Time </label>
+            <input ng-model="input_box_3" />
+            <label style="color: red;" ng-show="isErrorActive">{{errorMessage}}</label><br>
+
+            <label> Date </label>
+            <input ng-model="input_box_4" type="date"/>
+            <label style="color: red;" ng-show="isErrorActive">{{errorMessage}}</label><br> 
+      
+            <button ng-click="printTypedName()"> + </button>
+       
+        </div>
+
+       <table>
+         <thead>
+           <tr>
+             <th width=200>Task</th>
+             <th width=100>Start time</th>
+             <th width=100>End time</th>
+             <th width=100>Date</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr ng-repeat="items in tasks">
+             <td>{{tasks.name}}</td>
+             <td>{{tasks.stime}}</td>
+             <td>{{tasks.etime}}</td>
+             <td>{{tasks.tdate}}</td>
+           </tr>
+         </tbody>
+       </table>
+
+      </div>
+    
+    </div>
+    <!-- <div ng-controller="CtrlOne">Hello, {{name}}</div> -->
+  </body>
+</html>
